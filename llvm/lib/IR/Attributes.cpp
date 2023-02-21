@@ -489,6 +489,8 @@ std::string Attribute::getAsString(bool InAttrGrp) const {
     return "noundef";
   if (hasAttribute(Attribute::MustProgress))
     return "mustprogress";
+  if (hasAttribute(Attribute::XComp))
+    return "FlexOS_XComp";
 
   if (isTypeAttribute()) {
     std::string Result;

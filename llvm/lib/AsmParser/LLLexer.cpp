@@ -635,6 +635,9 @@ lltok::Kind LLLexer::LexIdentifier() {
 
   KEYWORD(attributes);
 
+  //flexos
+  KEYWORD(FlexOS_XComp);
+
   KEYWORD(alwaysinline);
   KEYWORD(allocsize);
   KEYWORD(argmemonly);

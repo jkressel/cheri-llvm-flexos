@@ -1821,6 +1821,13 @@ void CodeGenModule::SetLLVMFunctionAttributesForDefinition(const Decl *D,
       B.addAttribute(llvm::Attribute::StackProtectReq);
   }
 
+  // we check for yourAttribute attribute on functions
+if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
+  if (FD->hasAttr<FlexOSCHERICrossCompartmentAttr>()) {
+    B.addAttribute(llvm::Attribute::XComp);
+  }
+}
+
   if (!D) {
     // If we don't have a declaration to control inlining, the function isn't
     // explicitly marked as alwaysinline for semantic reasons, and inlining is

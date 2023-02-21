@@ -2188,6 +2188,12 @@ def Packed : InheritableAttr {
   let Documentation = [Undocumented];
 }
 
+// FlexOS
+def FlexOSCHERICrossCompartment : InheritableAttr {
+  let Spellings = [GNU<"__xcomp">];
+  let Documentation = [Undocumented];
+}
+
 // CHERI-related attributes
 
 def CHERICapability : TypeAttr {

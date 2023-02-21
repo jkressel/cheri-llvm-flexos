@@ -1432,6 +1432,9 @@ bool LLParser::parseFnAttributeValuePairs(AttrBuilder &B,
       break;
     }
 
+    //flexos
+    case lltok::kw_FlexOS_XComp: B.addAttribute(Attribute::XComp); break;
+
     // error handling.
     case lltok::kw_inreg:
     case lltok::kw_signext:

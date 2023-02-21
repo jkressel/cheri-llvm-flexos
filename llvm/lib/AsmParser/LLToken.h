@@ -458,6 +458,9 @@ enum Kind {
   kw_bit,
   kw_varFlags,
 
+  //flexos
+  kw_FlexOS_XComp,
+
   // Unsigned Valued tokens (UIntVal).
   LabelID,    // 42:
   GlobalID,   // @42

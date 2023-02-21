@@ -262,6 +262,9 @@ def WriteOnly : EnumAttr<"writeonly">;
 /// Zero extended before/after call.
 def ZExt : EnumAttr<"zeroext">;
 
+/// FlexOS cross compartment call
+def XComp : EnumAttr<"__xcomp">;
+
 // This MemTransferInst may transfer capabilities and must not be
 // split into smaller loads/stores that would break this property
 def MustPreserveCheriTags : EnumAttr<"must_preserve_cheri_tags">;

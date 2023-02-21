@@ -1700,6 +1700,7 @@ static bool isFuncOnlyAttr(Attribute::AttrKind Kind) {
   case Attribute::MustPreserveCheriTags:
   case Attribute::MustProgress:
   case Attribute::NoProfile:
+  case Attribute::XComp:
     return true;
   default:
     break;

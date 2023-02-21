@@ -926,6 +926,16 @@ static void handleLocksExcludedAttr(Sema &S, Decl *D, const ParsedAttr &AL) {
                  LocksExcludedAttr(S.Context, AL, StartArg, Size));
 }
 
+// must be on a function, otherwise any is ok
+static void handleAttributeXComp(Sema &S, Decl *D, const ParsedAttr &Attr) {
+   if (!isFunctionOrMethod(D)) {
+      S.Diag(D->getLocation(), diag::warn_attribute_wrong_decl_type)
+         << "'__xcomp'" << ExpectedFunctionOrMethod;
+      return;
+   }
+   handleSimpleAttribute<FlexOSCHERICrossCompartmentAttr>(S, D, Attr);
+}
+
 static bool checkFunctionConditionAttr(Sema &S, Decl *D, const ParsedAttr &AL,
                                        Expr *&Cond, StringRef &Msg) {
   Cond = AL.getArgAsExpr(0);
@@ -8338,6 +8348,9 @@ static void ProcessDeclAttribute(Sema &S, Scope *scope, Decl *D,
     break;
   case ParsedAttr::AT_CHERIMethodSuffix:
     handleCHERIMethodSuffix(S, D, AL);
+    break;
+  case ParsedAttr::AT_FlexOSCHERICrossCompartment:
+    handleAttributeXComp(S, D, AL);
     break;
   case ParsedAttr::AT_PointerInterpretationCaps:
     handleSimpleAttribute<PointerInterpretationCapsAttr>(S, D, AL);
