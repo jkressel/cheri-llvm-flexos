@@ -1701,6 +1701,10 @@ static bool isFuncOnlyAttr(Attribute::AttrKind Kind) {
   case Attribute::MustProgress:
   case Attribute::NoProfile:
   case Attribute::XComp:
+  case Attribute::FlexOSComp0:
+  case Attribute::FlexOSComp1:
+  case Attribute::FlexOSComp2:
+  case Attribute::FlexOSComp3:
     return true;
   default:
     break;

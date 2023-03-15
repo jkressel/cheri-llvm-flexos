@@ -637,6 +637,11 @@ lltok::Kind LLLexer::LexIdentifier() {
 
   //flexos
   KEYWORD(FlexOS_XComp);
+  //flexos compartments
+  KEYWORD(FlexOS_Comp0);
+  KEYWORD(FlexOS_Comp1);
+  KEYWORD(FlexOS_Comp2);
+  KEYWORD(FlexOS_Comp3);
 
   KEYWORD(alwaysinline);
   KEYWORD(allocsize);

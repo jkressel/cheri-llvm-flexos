@@ -2194,6 +2194,26 @@ def FlexOSCHERICrossCompartment : InheritableAttr {
   let Documentation = [Undocumented];
 }
 
+def FlexOSCHERIComp0 : InheritableAttr {
+  let Spellings = [GNU<"__flexos_comp0">];
+  let Documentation = [Undocumented];
+}
+
+def FlexOSCHERIComp1 : InheritableAttr {
+  let Spellings = [GNU<"__flexos_comp1">];
+  let Documentation = [Undocumented];
+}
+
+def FlexOSCHERIComp2 : InheritableAttr {
+  let Spellings = [GNU<"__flexos_comp2">];
+  let Documentation = [Undocumented];
+}
+
+def FlexOSCHERIComp3 : InheritableAttr {
+  let Spellings = [GNU<"__flexos_comp3">];
+  let Documentation = [Undocumented];
+}
+
 // CHERI-related attributes
 
 def CHERICapability : TypeAttr {

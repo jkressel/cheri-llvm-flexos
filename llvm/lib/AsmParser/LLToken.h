@@ -460,6 +460,10 @@ enum Kind {
 
   //flexos
   kw_FlexOS_XComp,
+  kw_FlexOS_Comp0,
+  kw_FlexOS_Comp1,
+  kw_FlexOS_Comp2,
+  kw_FlexOS_Comp3,
 
   // Unsigned Valued tokens (UIntVal).
   LabelID,    // 42:

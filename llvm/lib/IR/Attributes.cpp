@@ -491,6 +491,14 @@ std::string Attribute::getAsString(bool InAttrGrp) const {
     return "mustprogress";
   if (hasAttribute(Attribute::XComp))
     return "FlexOS_XComp";
+  if (hasAttribute(Attribute::FlexOSComp0))
+    return "FlexOS_Comp0";
+  if (hasAttribute(Attribute::FlexOSComp1))
+    return "FlexOS_Comp1";
+  if (hasAttribute(Attribute::FlexOSComp2))
+    return "FlexOS_Comp2";
+  if (hasAttribute(Attribute::FlexOSComp3))
+    return "FlexOS_Comp3";
 
   if (isTypeAttribute()) {
     std::string Result;

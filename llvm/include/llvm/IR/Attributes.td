@@ -265,6 +265,18 @@ def ZExt : EnumAttr<"zeroext">;
 /// FlexOS cross compartment call
 def XComp : EnumAttr<"__xcomp">;
 
+/// FlexOS compartment 0
+def FlexOSComp0 : EnumAttr<"__flexos_comp0">;
+
+/// FlexOS compartment 1
+def FlexOSComp1 : EnumAttr<"__flexos_comp1">;
+
+/// FlexOS compartment 2
+def FlexOSComp2 : EnumAttr<"__flexos_comp2">;
+
+/// FlexOS compartment 3
+def FlexOSComp3 : EnumAttr<"__flexos_comp3">;
+
 // This MemTransferInst may transfer capabilities and must not be
 // split into smaller loads/stores that would break this property
 def MustPreserveCheriTags : EnumAttr<"must_preserve_cheri_tags">;

@@ -1821,10 +1821,33 @@ void CodeGenModule::SetLLVMFunctionAttributesForDefinition(const Decl *D,
       B.addAttribute(llvm::Attribute::StackProtectReq);
   }
 
-  // we check for yourAttribute attribute on functions
 if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
   if (FD->hasAttr<FlexOSCHERICrossCompartmentAttr>()) {
     B.addAttribute(llvm::Attribute::XComp);
+  }
+}
+
+if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
+  if (FD->hasAttr<FlexOSCHERIComp0Attr>()) {
+    B.addAttribute(llvm::Attribute::FlexOSComp0);
+  }
+}
+
+if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
+  if (FD->hasAttr<FlexOSCHERIComp1Attr>()) {
+    B.addAttribute(llvm::Attribute::FlexOSComp1);
+  }
+}
+
+if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
+  if (FD->hasAttr<FlexOSCHERIComp2Attr>()) {
+    B.addAttribute(llvm::Attribute::FlexOSComp2);
+  }
+}
+
+if (const FunctionDecl *FD = dyn_cast_or_null<FunctionDecl>(D)) {
+  if (FD->hasAttr<FlexOSCHERIComp3Attr>()) {
+    B.addAttribute(llvm::Attribute::FlexOSComp3);
   }
 }
 

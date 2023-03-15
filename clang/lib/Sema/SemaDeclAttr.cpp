@@ -936,6 +936,42 @@ static void handleAttributeXComp(Sema &S, Decl *D, const ParsedAttr &Attr) {
    handleSimpleAttribute<FlexOSCHERICrossCompartmentAttr>(S, D, Attr);
 }
 
+static void handleAttributeFlexOSComp0(Sema &S, Decl *D, const ParsedAttr &Attr) {
+   if (!isFunctionOrMethod(D)) {
+      S.Diag(D->getLocation(), diag::warn_attribute_wrong_decl_type)
+         << "'__flexos_comp0'" << ExpectedFunctionOrMethod;
+      return;
+   }
+   handleSimpleAttribute<FlexOSCHERIComp0Attr>(S, D, Attr);
+}
+
+static void handleAttributeFlexOSComp1(Sema &S, Decl *D, const ParsedAttr &Attr) {
+   if (!isFunctionOrMethod(D)) {
+      S.Diag(D->getLocation(), diag::warn_attribute_wrong_decl_type)
+         << "'__flexos_comp1'" << ExpectedFunctionOrMethod;
+      return;
+   }
+   handleSimpleAttribute<FlexOSCHERIComp1Attr>(S, D, Attr);
+}
+
+static void handleAttributeFlexOSComp2(Sema &S, Decl *D, const ParsedAttr &Attr) {
+   if (!isFunctionOrMethod(D)) {
+      S.Diag(D->getLocation(), diag::warn_attribute_wrong_decl_type)
+         << "'__flexos_comp2'" << ExpectedFunctionOrMethod;
+      return;
+   }
+   handleSimpleAttribute<FlexOSCHERIComp2Attr>(S, D, Attr);
+}
+
+static void handleAttributeFlexOSComp3(Sema &S, Decl *D, const ParsedAttr &Attr) {
+   if (!isFunctionOrMethod(D)) {
+      S.Diag(D->getLocation(), diag::warn_attribute_wrong_decl_type)
+         << "'__flexos_comp3'" << ExpectedFunctionOrMethod;
+      return;
+   }
+   handleSimpleAttribute<FlexOSCHERIComp3Attr>(S, D, Attr);
+}
+
 static bool checkFunctionConditionAttr(Sema &S, Decl *D, const ParsedAttr &AL,
                                        Expr *&Cond, StringRef &Msg) {
   Cond = AL.getArgAsExpr(0);
@@ -8351,6 +8387,18 @@ static void ProcessDeclAttribute(Sema &S, Scope *scope, Decl *D,
     break;
   case ParsedAttr::AT_FlexOSCHERICrossCompartment:
     handleAttributeXComp(S, D, AL);
+    break;
+  case ParsedAttr::AT_FlexOSCHERIComp0:
+    handleAttributeFlexOSComp0(S, D, AL);
+    break;
+  case ParsedAttr::AT_FlexOSCHERIComp1:
+    handleAttributeFlexOSComp1(S, D, AL);
+    break;
+  case ParsedAttr::AT_FlexOSCHERIComp2:
+    handleAttributeFlexOSComp2(S, D, AL);
+    break;
+  case ParsedAttr::AT_FlexOSCHERIComp3:
+    handleAttributeFlexOSComp3(S, D, AL);
     break;
   case ParsedAttr::AT_PointerInterpretationCaps:
     handleSimpleAttribute<PointerInterpretationCapsAttr>(S, D, AL);
